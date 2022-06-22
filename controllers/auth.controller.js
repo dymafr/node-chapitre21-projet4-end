@@ -30,10 +30,11 @@ exports.signin = (req, res, next) => {
   })(req, res, next);
 };
 
-exports.signout = (req, res, next) =>
+exports.signout = (req, res, next) => {
   req.logout((err) => {
     if (err) {
       return next(err);
     }
     res.redirect('/auth/signin/form');
   });
+};
